@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int temp = (int) startTime;
-                int forwardTime = 5000;
+                int forwardTime = 6000;
 
                 finalTime = mediaPlayer.getDuration();
                 startTime = mediaPlayer.getCurrentPosition();
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 int temp = (int) mediaPlayer.getCurrentPosition();
-                int backwardTime = 5000;
+                int backwardTime = 6000;
 
                 finalTime = mediaPlayer.getDuration();
 
