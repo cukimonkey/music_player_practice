@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.sample01);
+        mediaPlayer = MediaPlayer.create(this, R.raw.phrase_what_is_your_name);
 
         //Set up on onClick button to play media file
         Button playButton = (Button) findViewById(R.id.play_button);
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                     startTime = temp - backwardTime;
                     mediaPlayer.seekTo((int) startTime);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Cannot jump backward 5 seconds", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -85,6 +85,12 @@ public class MainActivity extends AppCompatActivity {
                 mediaPlayer.stop();
             }
 
+        });
+
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            public void onCompletion(MediaPlayer mp) {
+                Toast.makeText(getApplicationContext(), "I'm done!", Toast.LENGTH_SHORT).show();
+            }
         });
 
         }
